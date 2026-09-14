@@ -45,7 +45,7 @@ This is a learning project, not a production service. The backend still needs in
 
 ## About this portfolio copy
 
-The source comes from the final version selected by Tanakorn Sukhom. Publication preparation removed database records, normalized line endings, added documentation and ignore rules, and made the PHP connection configurable through environment variables. The separate Python `db.py` for a `university` database is not part of this project.
+The source comes from the final version selected by Tanakorn Sukhom. Publication preparation removed database records, normalized line endings, added documentation and ignore rules, and made the PHP connection configurable through environment variables. The separate Python `db.py` for a `university` database is included under [`examples/python-university-db/`](examples/python-university-db/) for reference. It is not integrated with the insurance application.
 
 This repository demonstrates coursework code and does not claim that every feature has been tested or deployed. Specific individual contributions in any group work should be described separately.
 
