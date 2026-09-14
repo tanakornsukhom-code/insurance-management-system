@@ -1,0 +1,86 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="fontthai">เพิ่มข้อมูลกรมธรรม์</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- ลูกค้า -->
+  <ion-item>
+    <ion-label class="label">ชื่อลูกค้า : </ion-label>
+      <ion-select [(ngModel)]="Customer_ID" placeholder="เลือกชื่อลูกค้า">
+        <ion-select-option *ngFor="let item of customer" value="{{item.Customer_ID}}">{{item.First_Name}} {{item.Last_Name}}</ion-select-option>
+      </ion-select>
+  </ion-item>
+
+  <!-- ผลิตภัณฑ์ -->
+  <ion-item>
+    <ion-label class="label">ชื่อผลิตภัณฑ์ : </ion-label>
+    <ion-select [(ngModel)]="Product_ID" placeholder="เลือกผลิตภัณฑ์"
+                (ionChange)="onProductChange($event.detail.value)">
+      <ion-select-option *ngFor="let item of product" [value]="item.Product_ID">
+        {{item.Product_Name}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+  <!-- ตัวแทน -->
+  <ion-item>
+    <ion-label class="label">ชื่อตัวแทน : </ion-label>
+      <ion-select [(ngModel)]="Agent_ID" placeholder="เลือกชื่อตัวแทน">
+        <ion-select-option *ngFor="let item of agent" value="{{item.Agent_ID}}">{{  item.First_Name }} {{  item.Last_Name }}</ion-select-option>
+      </ion-select>
+  </ion-item>
+  <!-- วันที่เริ่มคุ้มครอง -->
+  <ion-item>
+    <ion-label class="label">วันที่เริ่มคุ้มครอง : </ion-label>
+    <!-- ถ้าคุณใช้ Ionic 4–5 สามารถคง display-format ได้ -->
+    <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="Issue_Date" placeholder="เลือกวันที่เริ่ม"></ion-datetime>
+    <!-- ถ้าเป็น Ionic 6+ แนะนำใช้ presentation="date" -->
+    <!-- <ion-datetime [(ngModel)]="Issue_Date" presentation="date" locale="th-TH" placeholder="เลือกวันที่เริ่ม"></ion-datetime> -->
+  </ion-item>
+
+  <!-- วันที่สิ้นสุด -->
+  <ion-item>
+    <ion-label class="label">วันที่สิ้นสุด : </ion-label>
+    <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="Expiry_Date" placeholder="เลือกวันหมดอายุ" [max]="maxYear"></ion-datetime>
+    <!-- <ion-datetime [(ngModel)]="Expiry_Date" presentation="date" locale="th-TH" placeholder="เลือกวันหมดอายุ"></ion-datetime> -->
+  </ion-item>
+
+ <!-- เบี้ยประกัน -->
+  <ion-item>
+    <ion-label class="label">เบี้ยประกัน : </ion-label>
+    <ion-input type="number" [(ngModel)]="Premium_Amount" placeholder="กรอกเบี้ยประกัน" readonly></ion-input>
+  </ion-item>
+
+  <!-- วงเงินคุ้มครองต่อปี -->
+  <ion-item>
+    <ion-label class="label">วงเงินคุ้มครองต่อปี : </ion-label>
+    <ion-input type="number" [(ngModel)]="Annual_Limit" placeholder="กรอกวงเงินคุ้มครอง" readonly></ion-input>
+  </ion-item>
+
+  <!-- สถานะกรมธรรม์ -->
+  <ion-list class="fontthai">
+    <ion-radio-group [(ngModel)]="Status">
+      <ion-list-header>
+        <ion-label>สถานะกรมธรรม์</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Active</ion-label>
+        <ion-radio value="Active"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Expired</ion-label>
+        <ion-radio value="Expired"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Cancelled</ion-label>
+        <ion-radio value="Cancelled"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-button expand="block" (click)="addPolicy()">บันทึก</ion-button>
+</ion-content>

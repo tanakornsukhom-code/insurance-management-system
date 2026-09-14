@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title><div class="fontthai">ข้อมูลพนักงาน</div></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-buttons slot="end">
+        <ion-button routerLink="/home" >
+          <ion-icon slot="icon-only" ios="home-outline" md="home-sharp"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button routerLink="/addagent" >
+          <ion-icon slot="icon-only" ios="add-outline" md="add-sharp"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+    <ion-item *ngFor="let item of agent " class="fontthai"> 
+      <h5>รหัสพนักงาน : {{item.Agent_ID}}
+        <br>ชื่อ : {{item.title_name}} {{item.First_Name}} {{item.Last_Name}}
+        <br>License : {{item.License_No}}</h5>
+    </ion-item>
+  </ion-list>
+</ion-content>

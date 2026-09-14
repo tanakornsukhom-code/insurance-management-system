@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title><div class="fontthai">ข้อมูลสินค้า</div></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-buttons slot="end">
+        <ion-button routerLink="/home" >
+          <ion-icon slot="icon-only" ios="home-outline" md="home-sharp"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button routerLink="/addproduct" >
+          <ion-icon slot="icon-only" ios="add-outline" md="add-sharp"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+    <ion-item *ngFor="let item of product " class="fontthai"> 
+      <h5>รหัสสินค้า : {{item.Product_ID}}<br>
+        ชื่อสินค้า : {{item.Product_Name}}
+        <br>ประเภท : {{item.Type}} | {{item.Description}}
+        <br>เงินคุ้มครอง : {{item.Coverage_Amount}}
+        <br>เบี้ยประกันพื้นฐาน : {{item.Base_Premium}}</h5>
+    </ion-item>
+  </ion-list>
+</ion-content>

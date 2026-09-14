@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="fontthai">เพิ่มข้อมูลประกัน</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label class="label">ชื่อประกัน : </ion-label>
+    <ion-input class="fontthai" type="text" [(ngModel)]="Product_Name" placeholder="กรอกชื่อประกัน"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label">ประเภท : </ion-label>
+    <ion-input class="fontthai" type="text" [(ngModel)]="Type" placeholder="เลือกประเภทประกัน"></ion-input>
+  </ion-item>
+    <ion-item>
+    <ion-label class="label">รายละเอียด : </ion-label>
+    <ion-input class="fontthai" type="text" [(ngModel)]="Description" placeholder="กรอกรายละเอียดของประกัน"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label">เงินคุ้มครอง : </ion-label>
+    <ion-input class="fontthai" type="number" [(ngModel)]="Coverage_Amount" placeholder="กรอกจำนวนเงินที่คุ้มครอง"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label">เบี้ยประกันพื้นฐาน : </ion-label>
+    <ion-input class="fontthai" type="number" [(ngModel)]="Base_Premium" placeholder="กรอกจำนวนเงินเบี้ยประกันพื้นฐาน"></ion-input>
+  </ion-item>
+  <ion-button (click)="addproduct()" class="button">
+    บันทึก
+  </ion-button>
+</ion-content>

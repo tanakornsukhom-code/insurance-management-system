@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div id="container">
+    <ion-list>
+       <div align="center">
+        <img src="../assets/image/logo.png " width="300">
+        <H5 class="fontthai">ปกป้องทุกความเสี่ยง ด้วยประกันยุคใหม่</H5>
+      </div>
+        <br>
+      <ion-item>
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-button [routerLink]="['/customer']" routerLinkActive="router-link-active"  expand="block" fill="clear" shape="round">
+          <div class="fontthai">ข้อมูลลูกค้า</div>
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="people-outline"></ion-icon>
+        <ion-button [routerLink]="['/agent']" routerLinkActive="router-link-active"  expand="block" fill="clear" shape="round">
+          <div class="fontthai">ข้อมูลพนักงาน</div>
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="pulse-outline"></ion-icon>
+        <ion-button [routerLink]="['/product']" routerLinkActive="router-link-active"  expand="block" fill="clear" shape="round">
+          <div class="fontthai">ประกัน</div>
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="fitness-outline"></ion-icon>
+        <ion-button [routerLink]="['/policy']" routerLinkActive="router-link-active"  expand="block" fill="clear" shape="round">
+          <div class="fontthai">กรมธรรม์</div>
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="git-compare-outline"></ion-icon>
+        <ion-button [routerLink]="['/claim']" routerLinkActive="router-link-active"  expand="block" fill="clear" shape="round">
+          <div class="fontthai">สิทธิประโยชน์ประกัน</div>
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="medkit-outline"></ion-icon>
+        <ion-button [routerLink]="['/policyagent']" routerLinkActive="router-link-active"  expand="block" fill="clear" shape="round">
+          <div class="fontthai">กรมธรรม์–ตัวแทน</div>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

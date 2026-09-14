@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="fontthai">เพิ่มข้อมูลเคลมประกัน</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <!-- เลือกเลขที่กรมธรรม์ -->
+  <ion-item>
+    <ion-label class="label">เลขที่กรมธรรม์ : </ion-label>
+    <ion-select [(ngModel)]="Policy_No" placeholder="เลือกเลขที่กรมธรรม์">
+      <ion-select-option *ngFor="let item of policy_customer" [value]="item.Policy_No">
+        {{ item.Policy_No }} / {{ item.First_Name }} {{ item.Last_Name }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- วันที่เจ็บป่วย -->
+  <ion-item>
+    <ion-label class="label">วันที่เจ็บป่วย : </ion-label>
+    <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="Date_Of_Illness" placeholder="เลือกวันที่"></ion-datetime>
+  </ion-item>
+
+  <!-- วันที่เคลม -->
+  <ion-item>
+    <ion-label class="label">วันที่เคลม : </ion-label>
+    <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="Claim_Date" placeholder="เลือกวันที่เคลม"></ion-datetime>
+  </ion-item>
+
+  <!-- วินิจฉัยโรค -->
+  <ion-item>
+    <ion-label class="label">วินิจฉัยโรค : </ion-label>
+    <ion-input class="fontthai" type="text" [(ngModel)]="Diagnosis" placeholder="กรอกวินิจฉัยโรค"></ion-input>
+  </ion-item>
+
+  <!-- จำนวนเงินที่ขอเคลม -->
+  <ion-item>
+    <ion-label class="label">จำนวนเงินที่ขอเคลม : </ion-label>
+    <ion-input class="fontthai" type="number" [(ngModel)]="Claim_Amount_Requested" placeholder="กรอกจำนวนเงิน"></ion-input>
+  </ion-item>
+
+  <!-- จำนวนเงินที่จ่ายจริง -->
+  <ion-item>
+    <ion-label class="label">จำนวนเงินที่จ่ายจริง : </ion-label>
+    <ion-input class="fontthai" type="number" [(ngModel)]="Claim_Amount_Paid" placeholder="กรอกจำนวนเงินที่จ่าย"></ion-input>
+  </ion-item>
+
+  <!-- สถานะเคลม -->
+  <ion-list class="fontthai">
+    <ion-radio-group [(ngModel)]="Status">
+      <ion-list-header>
+        <ion-label>สถานะเคลม</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label class="fontthai">รอดำเนินการ</ion-label>
+        <ion-radio value="Pending"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label class="fontthai">อนุมัติแล้ว</ion-label>
+        <ion-radio value="Approved"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label class="fontthai">ปฏิเสธ</ion-label>
+        <ion-radio value="Rejected"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <!-- ปุ่มบันทึก -->
+  <ion-button expand="block" (click)="addClaim()" class="button">
+    บันทึก
+  </ion-button>
+
+</ion-content>

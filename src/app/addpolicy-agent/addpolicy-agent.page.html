@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="fontthai">เพิ่มข้อมูลคอมมิชชั่นตัวแทน</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding fontthai">
+
+  <!-- เลือกกรมธรรม์ -->
+  <ion-item>
+    <ion-label class="label">เลขที่กรมธรรม์ :</ion-label>
+    <ion-select [(ngModel)]="Policy_No" placeholder="เลือกเลขที่กรมธรรม์" (ionChange)="onPolicyChange()">
+      <ion-select-option *ngFor="let item of customer" [value]="item.Policy_No">
+        {{item.Policy_No}} / {{item.First_Name}} {{item.Last_Name}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- เลือกตัวแทน -->
+  <ion-item>
+    <ion-label class="label">ชื่อตัวแทน :</ion-label>
+    <ion-select [(ngModel)]="Agent_ID" placeholder="เลือกรหัสตัวแทน">
+      <ion-select-option *ngFor="let item of agent" [value]="item.Agent_ID">
+        {{item.First_Name}} {{item.Last_Name}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- อัตราคอม -->
+  <ion-item>
+    <ion-label class="label">อัตราคอมมิชชั่น (%) :</ion-label>
+    <ion-input
+      type="number"
+      [(ngModel)]="Commission_Rate"
+      placeholder="กรอกอัตราคอมมิชชั่น"
+      (ionInput)="calculateCommission()">
+    </ion-input>
+  </ion-item>
+
+  <!-- แสดงผลเบี้ยประกัน -->
+  <ion-item>
+    <ion-label class="label">เบี้ยประกัน :</ion-label>
+    <ion-text>{{ Premium_Amount | number:'1.2-2' }} บาท</ion-text>
+  </ion-item>
+
+  <!-- แสดงผลค่าคอมมิชชัน -->
+  <ion-item>
+    <ion-label class="label">ค่าคอมมิชชั่น :</ion-label>
+    <ion-text>{{ Commission_Amount | number:'1.2-2' }} บาท</ion-text>
+  </ion-item>
+
+  <!-- ปุ่มบันทึก -->
+  <ion-button expand="block" (click)="addPolicyAgent()">บันทึก</ion-button>
+
+</ion-content>

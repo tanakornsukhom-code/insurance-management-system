@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title><div class="fontthai">สิทธิประโยชน์ประกัน</div></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-buttons slot="end">
+        <ion-button routerLink="/home" >
+          <ion-icon slot="icon-only" ios="home-outline" md="home-sharp"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button routerLink="/addclaim" >
+          <ion-icon slot="icon-only" ios="add-outline" md="add-sharp"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+    <ion-item *ngFor="let item of claim " class="fontthai"> 
+      <h5>รหัสการเคลม : {{item.Claim_ID}}
+        <br>อ้างอิงจากกรมธรรม์ที่ใช้เคลม : {{item.Policy_No}} 
+        <br>วันที่เกิดเหตุ / ป่วย : {{item.Date_Of_Illness}}
+        <br>วันที่ยื่นเคลม : {{item.Claim_Date}}
+        <br>รายละเอียดโรค / สาเหตุ : {{item.Diagnosis}}
+        <br>เงินที่ลูกค้าขอเคลม : {{item.Claim_Amount_Requested}}
+        <br>เงินที่บริษัทจ่ายจริง : {{item.Claim_Amount_Paid}}
+        <br>สถานะการเคลม : {{item.Status}}</h5>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&display=swap');
+.fontthai {
+  font-family: "Anuphan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  color: #ffffff;
+}
+/* ===== Theme Colors ===== */
+:root {
+  --primary-color: #1565C0;
+  --accent-color: #1563670ed5c0;
+  --text-color: #ffffff;
+  --card-hover: #e3f2fd;
+}
+
+/* ===== Layout ===== */
+ion-content {
+  --background: linear-gradient(135deg, #16eadc, #63a0e6);
+  color: #3670ed;
+}
+
+/* ===== Toolbar ===== */
+ion-header ion-toolbar {
+  --background: linear-gradient(90deg, #1951d2, #76b6eb);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  ion-title {
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    color: #ffffff;
+  }
+}
+
+/* ===== List Menu ===== */
+ion-list {
+  background: transparent;
+  margin-top: 40px;
+  padding: 0 12px;
+}
+
+ion-item {
+  --background: #03A9F4;
+  color: #ffffff;
+  border-radius: 14px;
+  margin: 10px 0;
+  font-weight: 500;
+  align-items: center;
+  box-shadow:
+    4px 4px 10px rgba(0, 0, 0, 0.25),
+    -4px -4px 10px rgba(255, 255, 255, 0.15);
+  transition: 0.3s ease;
+
+  ion-icon {
+    color: var(--primary-color);
+    margin-right: 12px;
+    font-size: 1.4rem;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    background: var(--card-hover);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  ion-item { font-size: 0.95rem; }
+  ion-icon { font-size: 1.2rem; }
+}

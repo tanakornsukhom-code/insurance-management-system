@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&display=swap');
+.fontthai {
+  font-family: "Anuphan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+.label{
+    width: auto;
+    flex: none;
+    font-family: "Anuphan", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+/* ====== Theme Colors ====== */
+:root {
+  --primary-color: #1e88e5;
+  --accent-color: #42a5f5;
+  --gradient-bg: linear-gradient(135deg, #6bfafa, #42a5f5);
+  --text-color: #333;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.15);
+}
+
+/* ====== Font ====== */
+.fontthai {
+  font-family: "Anuphan", sans-serif;
+  font-weight: 500;
+}
+/* ===== Layout ===== */
+ion-content {
+  --background: linear-gradient(135deg, #16eadc, #63a0e6);
+  color: #1565C0;
+}
+/* ===== List Menu ===== */
+ion-list {
+  background: transparent;
+  margin-top: 40px;
+  padding: 0 12px;
+}
+/* ====== Toolbar ====== */
+ion-header ion-toolbar {
+  --background: linear-gradient(90deg, #1976d2, #42a5f5);
+  color: inherit;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  ion-title {
+    @extend .fontthai;
+    font-weight: 600;
+    color: #fff;
+  }
+  ion-buttons ion-icon {
+    color: #fff;
+  }
+}
+/* ====== Items ====== */
+ion-item {
+  --background: #03A9F4;
+  color: #ffffff;
+  border-radius: 14px;
+  margin: 10px 0;
+  font-weight: 500;
+  align-items: center;
+  box-shadow:
+    4px 4px 10px rgba(0, 0, 0, 0.25),
+    -4px -4px 10px rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ion-datetime {
+  @extend .fontthai;
+  --background: transparent; // หรือใช้สีไล่เฉดก็ได้
+  --color: #ffffff;           // สีตัวอักษรให้ตัดกับพื้นหลัง
+  --placeholder-color: #bbdefb;
+  border: 1px solid #90caf9;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 15px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+
+  &:focus-within {
+    border-color: var(--primary-color);
+  }
+}
+/* ====== Cards ====== */
+ion-card {
+  background: #02cfeb;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  margin-bottom: 22px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  }
+  .label {
+    @extend .fontthai;
+    font-weight: 600;
+    color: #1565c0;
+    margin-bottom: 4px;
+    font-size: 15px;
+    display: block;
+  }
+  .value {
+    @extend .fontthai;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    display: block;
+  }
+}
+/* ====== Button ====== */
+.button {
+  @extend .fontthai;
+  display: block;
+  margin: 25px auto 0;
+  width: 60%;
+  background: linear-gradient(90deg, #1e88e5, #42a5f5);
+  color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+/* ====== Responsive ====== */
+@media (max-width: 600px) {
+  ion-card {
+    padding: 14px;
+  }
+}
+
+

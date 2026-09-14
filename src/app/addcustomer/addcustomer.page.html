@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="fontthai">เพิ่มข้อมูลลูกค้า</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label class="label">รหัสบัตรประจำตัวประชาชน : </ion-label>
+    <ion-input class="fontthai" type="text" [(ngModel)]="ID_Card_No" placeholder="กรอกรหัส 13 หลัก"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label">คำนำหน้าชื่อ : </ion-label>
+      <ion-select [(ngModel)]="title_id" placeholder="เลือกคำนำหน้าชื่อ">
+        <ion-select-option *ngFor="let item of title" value="{{item.title_id}}">{{item.title_name}}</ion-select-option>
+      </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label">ชื่อ : </ion-label>
+    <ion-input class="fontthai" type="text" [(ngModel)]="First_Name" placeholder="กรอกชื่อภาษาไทย"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label">นามสกุล : </ion-label>
+    <ion-input class="fontthai" type="text" [(ngModel)]="Last_Name" placeholder="กรอกนามสกุลภาษาไทย"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label">วันเกิด : </ion-label>
+    <ion-datetime min="1950-01-01" max="2025-12-31" display-format="DD/MM/YYYY" [(ngModel)]="Date_Of_Birth"
+      placeholder="เลือกวันเกิด"></ion-datetime>
+  </ion-item>
+  <ion-list class="fontthai">
+    <ion-radio-group [(ngModel)]="Gender">
+      <ion-list-header>
+        <ion-label>เพศ</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label class="fontthai">ชาย</ion-label>
+        <ion-radio value="ชาย"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label class="fontthai">หญิง</ion-label>
+        <ion-radio value="หญิง"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+  <ion-item>
+    <ion-label class="label">เบอร์โทร : </ion-label>
+    <ion-input class="fontthai" type="text" [(ngModel)]="Phone" placeholder="หมายเลขโทรศัพท์ 10 ตัว"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label">email : </ion-label>
+    <ion-input class="fontthai" type="mail" [(ngModel)]="Email" placeholder="ที่อยู่ email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label">ที่อยู่ : </ion-label>
+    <ion-input class="fontthai" type="text" [(ngModel)]="Address" ></ion-input>
+  </ion-item>
+  <ion-button (click)="addcustomer()" class="button">
+    บันทึก
+  </ion-button>
+</ion-content>
